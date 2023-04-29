@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #D8BFD8;">
+	<div style="margin: 0 auto; max-width: 500px; padding: 20px; background-color: #DCDCDC; border-radius: 5px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);">
+		<h1 style="text-align: center; color: #555;">Registration</h1>
+		<form action="register" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder= "Enter your username" size="15" style="width: 95%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;" /><br>
+            <input type="text" name="firstname" placeholder= "Enter your firstname" size="15" style="width: 95%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;" /><br>
+            <input type="text" name="lastname" placeholder="Enter your lastname" size="15" style="width: 95%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;" /><br>
+            <input type="email" name="email" placeholder= "Enter your email id" size="15" style="width: 95%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;" /><br>
+            <input type="password" name="password" placeholder="Enter password" size="15" style="width: 95%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;" /><br>
+            <input type="password" name="password1" placeholder= "Confirm your password" size="15" style="width: 95%; padding: 10px; border-radius: 3px; border: 1px solid #ccc; margin-bottom: 20px;" /><br>
+            <input type="submit" style="width :100%; background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; transition: background-color 0.3s ease;"/>
+        </form>
+    </div>
+{% for msg in messages %}
+    <h3>{{msg}}</h3>
+{% endfor %}
+</body>
+</html>
